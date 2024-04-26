@@ -37,7 +37,7 @@ dependencies {
 publishing {
   publications {
     create<MavenPublication>("ReleaseAar") {
-      groupId = "com.github.NobilityDeviant.transformers"
+      groupId = "com.github.NobilityDeviant.transformers-bubbly"
       artifactId = "coil-gpu"
       version = "0.9"
       afterEvaluate { artifact(tasks.getByName("bundleReleaseAar")) }
