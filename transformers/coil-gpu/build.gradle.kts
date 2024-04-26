@@ -1,5 +1,6 @@
 plugins {
   id("com.android.library")
+  id("maven-publish")
   kotlin("android")
   id("kotlin-kapt")
   ktlint
@@ -33,28 +34,13 @@ dependencies {
   implementation(Libraries.annotation)
 }
 
-extra.apply {
-  set("bintrayRepo", "maven")
-  set("bintrayName", "transformers")
-  set("bintrayUserOrg", "wasabeef")
-  set("publishedGroupId", "jp.wasabeef.transformers")
-  set("libraryName", "transformers")
-  set("artifact", "coil-gpu")
-  set("libraryDescription", "An Android transformation library providing a variety of image transformations for Coil.")
-  set("siteUrl", "https://github.com//wasabeef/transformers")
-  set("gitUrl", "https://github.com//wasabeef/transformers.git")
-  set("issueUrl", "https://github.com//wasabeef/transformers/issues")
-  set("libraryVersion", BuildConfig.appVersionName)
-  set("developerId", "wasabeef")
-  set("developerName", "Daichi Furiya")
-  set("developerEmail", "dadadada.chop@gmail.com")
-  set("licenseName", "The Apache Software License, Version 2.0")
-  set("licenseUrl", "http://www.apache.org/licenses/LICENSE-2.0.txt")
-  set("allLicenses", arrayOf("Apache-2.0"))
+publishing {
+  publications {
+    create<MavenPublication>("ReleaseAar") {
+      groupId = "com.github.NobilityDeviant.transformers"
+      artifactId = "coil-gpu"
+      version = "0.9"
+      afterEvaluate { artifact(tasks.getByName("bundleReleaseAar")) }
+    }
+  }
 }
-
-// TODO: Close JCenter on May 1st https://jfrog.com/blog/into-the-sunset-bintray-jcenter-gocenter-and-chartcenter/
-//apply(from = "https://gist.githubusercontent.com/wasabeef/cf14805bee509baf7461974582f17d26/raw/bintray-v1.gradle")
-//apply(from = "https://gist.githubusercontent.com/wasabeef/cf14805bee509baf7461974582f17d26/raw/install-v1.gradle")
-
-apply(from = "https://gist.githubusercontent.com/wasabeef/2f2ae8d97b429e7d967128125dc47854/raw/maven-central-v1.gradle")

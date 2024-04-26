@@ -22,6 +22,7 @@ import kotlin.math.min
  * limitations under the License.
  */
 
+
 class CropCircleWithBorder constructor(
   private val borderSize: Int,
   private val borderColor: Int
@@ -34,24 +35,23 @@ class CropCircleWithBorder constructor(
 
     CropCircle().transform(source, destination)
 
-    val size = min(destination.width, destination.height)
     destination.density = source.density
     destination.setHasAlpha(true)
+
+    val minSize = minOf(source.width, source.height)
+    val maxSize = maxOf(source.width, source.height)
+    val strokeSize = borderSize * 1f * minSize / maxSize
+    val radius = minSize / 2f
 
     val paint = Paint().apply {
       color = borderColor
       style = Paint.Style.STROKE
-      strokeWidth = borderSize.toFloat()
+      strokeWidth = strokeSize
       isAntiAlias = true
       isFilterBitmap = true
     }
     val canvas = Canvas(destination)
-    canvas.drawCircle(
-      size / 2f,
-      size / 2f,
-      max(size, size) / 2f - borderSize / 2f,
-      paint
-    )
+    canvas.drawCircle(radius, radius, radius - strokeSize / 2f, paint)
     canvas.setBitmap(null)
 
     return destination
