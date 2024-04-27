@@ -20,7 +20,7 @@ import android.renderscript.RSRuntimeException
  * limitations under the License.
  */
 
-class Blur constructor(
+class Blur(
   context: Context,
   private val radius: Int,
   private val sampling: Int,

@@ -1,11 +1,10 @@
 object BuildConfig {
-  const val compileSdk = 31
+  const val compileSdk = 34
 
   const val appId = "jp.wasabeef.transformers"
   const val minSdk = 21
-  const val targetSdk = 31
-  const val appVersionCode = 4
-  const val appVersionName = "1.0.6"
+  const val targetSdk = 34
+  const val appVersionName = "1.0.0"
 
   const val testRunner = "androidx.test.runner.AndroidJUnitRunner"
 }
@@ -16,13 +15,11 @@ object Projects {
 
   const val glide = ":transformers:glide"
   const val glideGpu = ":transformers:glide-gpu"
-  const val picasso = ":transformers:picasso"
   const val coil = ":transformers:coil"
   const val coilGpu = ":transformers:coil-gpu"
-  const val fresco = ":transformers:fresco"
 
   object FromRepo {
-    const val transformersVersion = "1.0.6"
+    private const val transformersVersion = "1.0.6"
     const val glide = "jp.wasabeef.transformers:glide:$transformersVersion"
     const val glideGpu = "jp.wasabeef.transformers:glide-gpu:$transformersVersion"
     const val coil = "jp.wasabeef.transformers:coil:$transformersVersion"

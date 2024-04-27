@@ -12,11 +12,9 @@ android {
   defaultConfig {
     minSdk = BuildConfig.minSdk
     targetSdk = BuildConfig.targetSdk
-
     buildConfigField("String", "Version", "\"${BuildConfig.appVersionName}\"")
-
     testInstrumentationRunner = BuildConfig.testRunner
-    consumerProguardFile("consumer-rules.pro")
+    //consumerProguardFile("consumer-rules.pro")
   }
 
   compileOptions {

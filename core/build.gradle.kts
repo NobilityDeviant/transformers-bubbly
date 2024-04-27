@@ -14,8 +14,7 @@ android {
 
     buildConfigField("String", "Version", "\"${BuildConfig.appVersionName}\"")
 
-    testInstrumentationRunner = BuildConfig.testRunner
-    consumerProguardFile("consumer-rules.pro")
+    //consumerProguardFile("consumer-rules.pro")
   }
 
   compileOptions {
