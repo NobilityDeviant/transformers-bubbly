@@ -7,8 +7,8 @@ buildscript {
   }
 
   dependencies {
-    classpath("com.android.tools.build:gradle:7.1.2")
-    classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Libraries.kotlinVersion}")
+    classpath("com.android.tools.build:gradle:7.4.2")
+    classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.0")
   }
 }
 
@@ -23,7 +23,7 @@ allprojects {
   tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class).configureEach {
     kotlinOptions {
       // allWarningsAsErrors = true
-      jvmTarget = "1.8"
+      jvmTarget = "17"
     }
   }
 }

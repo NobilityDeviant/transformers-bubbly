@@ -31,15 +31,3 @@ object Ktlint {
   const val plugin = "com.pinterest:ktlint:0.42.1"
 }
 
-object Libraries {
-  const val kotlinVersion = "1.5.31"
-  const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
-
-  const val annotation = "androidx.annotation:annotation:1.2.0"
-
-  private const val glideVersion = "4.12.0"
-  const val glide = "com.github.bumptech.glide:glide:$glideVersion"
-  const val glideCompiler = "com.github.bumptech.glide:compiler:$glideVersion"
-  const val coil = "io.coil-kt:coil:2.0.0-rc01"
-  const val gpuImage = "jp.co.cyberagent.android:gpuimage:2.1.0"
-}

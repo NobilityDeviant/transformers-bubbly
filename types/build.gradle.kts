@@ -19,13 +19,13 @@ android {
   }
 
   compileOptions {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
   }
 }
 
 dependencies {
-  implementation(Libraries.kotlin)
+  implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.22")
 }
 
 publishing {

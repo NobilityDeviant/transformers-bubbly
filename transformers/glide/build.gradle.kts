@@ -20,8 +20,8 @@ android {
   }
 
   compileOptions {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
   }
 }
 
@@ -29,10 +29,10 @@ dependencies {
   implementation(project(Projects.core))
   api(project(Projects.types))
 
-  implementation(Libraries.kotlin)
-  implementation(Libraries.glide)
-  kapt(Libraries.glideCompiler)
-  implementation(Libraries.annotation)
+  implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.22")
+  implementation("com.github.bumptech.glide:glide:4.14.2")
+  kapt("com.github.bumptech.glide:compiler:4.14.2")
+  implementation("androidx.annotation:annotation:1.7.1")
 }
 
 publishing {

@@ -20,18 +20,18 @@ android {
   }
 
   compileOptions {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
   }
 }
 
 dependencies {
   api(project(Projects.glide))
 
-  implementation(Libraries.kotlin)
-  implementation(Libraries.glide)
-  implementation(Libraries.gpuImage)
-  implementation(Libraries.annotation)
+  implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.22")
+  implementation("com.github.bumptech.glide:glide:4.14.2")
+  implementation("jp.co.cyberagent.android:gpuimage:2.1.0")
+  implementation("androidx.annotation:annotation:1.7.1")
 }
 
 publishing {

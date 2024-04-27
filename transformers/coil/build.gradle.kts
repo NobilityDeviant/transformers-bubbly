@@ -13,14 +13,11 @@ android {
     targetSdk = BuildConfig.targetSdk
 
     buildConfigField("String", "Version", "\"${BuildConfig.appVersionName}\"")
-
-    testInstrumentationRunner = BuildConfig.testRunner
-    //consumerProguardFile("consumer-rules.pro")
   }
 
   compileOptions {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
   }
 }
 
@@ -28,9 +25,9 @@ dependencies {
   implementation(project(Projects.core))
   api(project(Projects.types))
 
-  implementation(Libraries.kotlin)
-  implementation(Libraries.coil)
-  implementation(Libraries.annotation)
+  implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.22")
+  implementation("io.coil-kt:coil:2.4.0")
+  implementation("androidx.annotation:annotation:1.7.1")
 }
 
 publishing {
